@@ -1,0 +1,204 @@
+@import url('https://fonts.cdnfonts.com/css/terminal');
+
+/* Styling for layout and colors */
+html {
+    font-family: 'Terminal', sans-serif;
+    background-color: white;
+    color: whitesmoke;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    text-align: center;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.897);
+    font-size: 26px;
+    padding: 15px;
+
+    flex-shrink: 0;
+}
+
+#sectionContainer {
+    margin-top: 6px;
+    background-color: rgba(0, 0, 0, 0.825);
+    font-size: 26px;
+    padding: 10px;
+
+    flex: 1;
+    overflow: visible;
+}
+
+#footer {
+    margin-top: 6px;
+    text-align: center;
+    height: 100px;
+
+    background-color: rgba(0, 0, 0, 0.957);
+    font-size: 26px;
+    padding: 10px;
+
+    flex-shrink: 0;
+}
+
+.loadBtn button {
+    text-align: center;
+    height: 100px;
+    cursor: pointer;
+    background-color: black;
+    font-size: 40px;
+    padding: 30px;
+
+    font-family: 'Terminal', sans-serif;
+    color: white;
+
+    background: linear-gradient(to right, gray, gray, gray 40%, #000000 120%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: background-position 1s;
+}
+
+.loadBtn {
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.loadBtn button:hover {
+    background-position: 0 0;
+}
+
+/* End of styling for layout and colors */
+
+/* Styling of dynamically added content*/
+.aboutmeTitle {
+    text-align: center;
+}
+
+.educationTitle {
+    text-align: center;
+}
+
+.projectsTitle {
+    text-align: center;
+}
+
+
+.aboutmeDesc,
+.educationDesc,
+.projectsDesc {
+    letter-spacing: 4px;
+    font-size: 26px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: auto;
+    min-height: 80dvh;
+
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 2.5%;
+
+}
+
+/* Styling of nextSection button*/
+/*.nextSection {
+    padding: 8px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+
+    display: block;
+    margin-left: 80%;
+    margin-top: auto;
+
+    font-size: 20px;
+}*/
+
+/* Styling for the TOC */
+.sideNav {
+    position: fixed;
+    top: 20%;
+    padding: 10px;
+}
+
+.navUl {
+    list-style: none;
+}
+
+.navLi {
+    margin: 10px 0;
+}
+
+.liA {
+    color: rgba(255, 255, 255, 0.304);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.liA.active {
+    color: white;
+}
+
+/* Styling for checkboxes */
+.checkBoxContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    justify-content: center;
+    margin-top: 2.5%;
+}
+
+.optionLabel {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 18px;
+    color: tan;
+}
+
+/* Styling for projects boxes */
+.projectsBoxContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 10px;
+    gap: 80px;
+}
+
+.projectsBox {
+    width: 40%;
+    border: 2px solid black;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow:   0 4px 6px rgba(0, 0, 0, 0.3),   /* soft main shadow */
+    0 10px 15px rgba(0, 0, 0, 0.175),  /* deeper shadow */
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+    background-color: rgba(0, 0, 0, 0.159);
+    color:rgba(248, 248, 255, 0.774);
+
+}
+
+.projectsBoxName {
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.projectsBoxSkills {
+    font-size: 18px;
+}
+
+.projectsBoxLink {
+    font-size: 14px;
+}

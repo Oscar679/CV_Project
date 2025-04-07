@@ -1,0 +1,69 @@
+{
+    "info": [
+        {
+            "title": "ABOUT ME",
+            "desc": "<br>Hi there! I'm [Your Name], a passionate web developer and tech enthusiast based in [Your Location]. With a strong foundation in JavaScript, HTML, and CSS, I specialize in creating interactive, user-friendly websites and applications.My journey into web development started back in [Year], and since then, I've been constantly learning and evolving to stay ahead in this fast-paced industry. When I'm not coding, you can find me exploring new technologies. 22Quam praesentium corporis voluptate laborum explicabo quidem placeat laudantium nulla odio? Incidunt, aperiam itaque quas reprehenderit laudantium aspernatur obc22Quam praesentium corporis voluptate laborum explicabo quidem placeat laudantium nul r obc22Quam praesrporis voluptate laborum explicabo quidem placeat laudantium nul"
+        },
+        {
+            "title": "PROJECTS",
+            "desc": "22Quam praesentium corporis voluptate laborum explicabo quidem placeat laudantium nulla odio? Incidunt, aperiam itaque quas reprehenderit laudantium aspernatur obc22Quam praesentium corporis voluptate laborum explicabo quidem placeat laudantium nulla odio? Incidunt, aperiam itaque quas reprehenderit laudantium aspernatur ob22Quam praesentium corporis 22Quam praesentium corporis voluptate laborum explicabo quidem placeat laudantium nulla odio? Incidunt, aperiam itaque quas reprehenderit laudantium aspernatur obc22Quam praesentium corporis voluptate laborum explicabo quidem placeat laudantium nul 22Quam praesentium corporis voluptate laborum explicabo quidem placeat laudantium nulla odio? Incidunt, aperiam itaque quas reprehenderit laudantium aspernatur obc22Quam praesentium corporis voluptate laborum explicabo quidem placeat laudantium nul 22Quam praesentium corporis voluptate laborum explicabo quidem placeat laudantium nulla odio? Incidunt, aperiam itaque quas reprehenderit laudantium aspernatur obc22Quam praesentium corporis voluptate laborum explicabo quidem placeat laudantium nul"
+        },
+        {
+            "title": "EDUCATION",
+            "desc": "22Quam praesentium corporis voluptate laborum explicabo quidem placeat laudantium nulla odio? Incidunt, aperiam itaque quas reprehenderit laudantium aspernatur obc22Quam praesentium corporis voluptate laborum explicabo quidem placeat laudantium nulla odio? Incidunt, aperiam itaque quas reprehenderit laudantium aspernatur ob22Quam praesentium corporis voluptate lac 22Quam praesentium corporis voluptate laborum explicabo quidem placeat laudantium nulla odio? Incidunt, aperiam itaque quas reprehenderit laudantium aspernatur obc22Quam praesentium corporis voluptate laborum explicabo quidem placeat laudantium nul 22Quam praesentium corporis voluptate laborum explicabo quidem placeat laudantium nulla odio? Incidunt, aperiam itaque quas reprehenderit laudantium aspernatur obc22Quam praesentium corporis voluptate laborum explicabo quidem placeat laudantium nul"
+        }
+    ],
+    "courses": [
+        {
+            "name": "Webbteknik 1",
+            "credits": 7.5,
+            "mainField": "Media Technology",
+            "link": "linklink"
+        },
+        {
+            "name": "Webbteknik 2",
+            "credits": 7.5,
+            "mainField": "Media Technology",
+            "link": "linklink"
+        },
+        {
+            "name": "Webbteknik 3",
+            "credits": 7.5,
+            "mainField": "Media Technology",
+            "link": "linklink"
+        },
+        {
+            "name": "Databasteori",
+            "credits": 7.5,
+            "mainField": "Computer Science",
+            "link": "linklink"
+        }
+    ],
+    "projects": [
+        {
+            "name": "Weather Application",
+            "skills": "PHP, MySQL, CSS, HTML",
+            "link": "linklink"
+        },
+        {
+            "name": "Blog Website",
+            "skills": "PHP, Oracle, CSS, HTML",
+            "link": "linklink"
+        },
+        {
+            "name": "Personal Note Application",
+            "skills": "JavaScript, MySQL, CSS, HTML",
+            "link": "linklink"
+        },
+        {
+            "name": "Resume Website",
+            "skills": "JavaScript, HTML, CSS, AWS, MySQL",
+            "link": "linklink"
+        },
+        {
+            "name": "Weather Application",
+            "skills": "PHP, MySQL, CSS, HTML",
+            "link": "linklink"
+        }
+    ]
+}
