@@ -33,6 +33,7 @@ app.get('/api/COURSE', (req, res) => {
       res.status(500).send('Database query error');
       return;
     }
+    console.log(result);
     res.json(result);
   });
 });
