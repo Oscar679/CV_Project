@@ -56,40 +56,6 @@ Content.prototype.construct = async function (jsonUrl) {
         content: this.data.info[0].desc
     })
 
-    /*
-    this.contactTitle = ElemUtil("side", {
-       className: "contactContainer",
-       appendTo: this.aboutMeTitle,
-       content: this.data.info[3].title
-    })
-    
-    this.contactDescUl = ElemUtil("ul", {
-       className: "",
-       appendTo: this.contactTitle
-    })
-    
-    this.contactDescLi = ElemUtil("li", {
-         className: "",
-         appendTo: this.contactDescUl,
-         content: this.data.info[3].desc0
-     })*/
-
-    /* this.nextSection0 = ElemUtil("div", {
-         className: "nextSection",
-         appendTo: document.getElementById("sectionContainer"),
-         content: "Scroll to next section",
-         event: {
-             click: function () {
-                 if (this.projectsTitle) {
-                     this.projectsTitle.scrollIntoView({ behavior: 'smooth' });
-                 } else {
-                     console.error("projectsTitle is undefined.");
-                 }
-             }.bind(this)
-         }
-     })*/
-
-
     this.projectsTitle = ElemUtil("h2", {
         className: "educationTitle",
         appendTo: document.getElementById("sectionContainer"),
@@ -166,52 +132,6 @@ Content.prototype.construct = async function (jsonUrl) {
             content: this.data.projects[i].link
         })
     }
-    /*
-    this.dropDown = ElemUtil("div", {
-        className: "dropDown",
-        appendTo: this.projectsTitle
-    })
-
-    this.button = ElemUtil("button", {
-        className: "dropBtn",
-        appendTo: this.dropDown
-    })
-
-    this.dropDownContent = ElemUtil("div", {
-        className: "dropDownContent",
-        appendTo: this.dropDown
-    })
-
-    for (var i = 0; i < 5; i++) {
-        this.options = ElemUtil("input", {
-            className: "options",
-            appendTo: this.dropDownContent,
-            type: "checkbox"
-        });
-
-        this.optionsPElem = ElemUtil("p", {
-            className: "optionsPElem",
-            appendTo: this.options,
-            content: "TEST"
-        })
-    }
-*/
-
-    /* this.nextSection1 = ElemUtil("div", {
-         className: "nextSection",
-         appendTo: document.getElementById("sectionContainer"),
-         content: "Scroll to next section",
-         event: {
-             click: function () {
-                 console.log("Click on section1");
-                 if (this.educationTitle) {
-                     this.educationTitle.scrollIntoView({ behavior: 'smooth' });
-                 } else {
-                     console.error("educationTitle is undefined.");
-                 }
-             }.bind(this)
-         }
-     })*/
 
     console.log(this.data.info[1].desc);
     this.educationTitle = ElemUtil("h2", {
@@ -226,21 +146,6 @@ Content.prototype.construct = async function (jsonUrl) {
         appendTo: document.getElementById("sectionContainer"),
         content: this.data.info[2].desc
     })
-
-    /* this.nextSection2 = ElemUtil("div", {
-         className: "nextSection",
-         appendTo: document.getElementById("sectionContainer"),
-         content: "Take me back to the top",
-         event: {
-             click: function () {
-                 if (document.getElementById("header")) {
-                     document.getElementById("header").scrollIntoView({ behavior: 'smooth' });
-                 } else {
-                     console.error("header is undefined.");
-                 }
-             }.bind(this)
-         }
-     })*/
 
     new SectionChecker();
 }

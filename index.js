@@ -1,24 +1,15 @@
 // Importera beroenden
 const express = require('express');
 const mysql = require('mysql2');
+const path = require('path');
 require('dotenv').config();
-// Importera andra filer direkt från samma katalog (om behövs)
-// const db = require('./dbConnection');  // dbConnection.js
-// const mainFunction = require('./Main');  // Main.js
-// const getContent = require('./Content');  // Content.js
-// const getElemUtil = require('./ElemUtil');
-// const getSectionChecker = require('./SectionChecker');
 
-// Skapa Express-app
 const app = express();
 const port = 3000;
 
-const path = require('path');
-
-// Serve index.html from the public folder
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html')); // Serve index.html
-});
+// view engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'))
 
 // Serve static files (CSS, JS) from the public directory
 app.use(express.static('public'));  // Publickatalogen där HTML, CSS och JS ligger
@@ -38,6 +29,25 @@ dbConnection.connect((err) => {
     return;
   }
   console.log('Ansluten till databasen!');
+});
+
+// Serve index.html from the public folder
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html')); // Serve index.html
+});
+
+app.get('/api/COURSE', (req, res) => {
+  const query = `
+  SELECT u.forename, u.lastname, u.age, u.description
+  FROM USER u
+  `;
+  dbConnection.query(query, (err, result) => {
+    if (err) {
+      res.status(500).send('Database query error');
+      return;
+    }
+    res.json(result);  // Send the result as a JSON response
+  });
 });
 
 // Starta servern
