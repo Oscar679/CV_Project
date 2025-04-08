@@ -3,7 +3,7 @@ const express = require('express');
 const mysql = require('mysql2');
 const path = require('path');
 require('dotenv').config();
-
+console.log('tes1231231t');
 const app = express();
 const port = 3000;
 
