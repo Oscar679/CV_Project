@@ -7,6 +7,25 @@ require('dotenv').config();
 const app = express();
 const port = 3000;
 
+app.get('/api/COURSE', (req, res) => {
+  const query = `
+    SELECT u.forename AS title, u.description AS desc
+    FROM USER u
+  `;
+  dbConnection.query(query, (err, result) => {
+    if (err) {
+      res.status(500).send('Database query error');
+      return;
+    }
+
+    res.json({ info: result });  // Skickar tillbaka: { info: [...] }
+  });
+});
+
+app.get('/test', (req, res) => {
+  res.send('API is working!');
+});
+
 // view engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
@@ -34,25 +53,6 @@ dbConnection.connect((err) => {
 // Serve index.html from the public folder
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html')); // Serve index.html
-});
-
-app.get('/api/COURSE', (req, res) => {
-  const query = `
-    SELECT u.forename AS title, u.description AS desc
-    FROM USER u
-  `;
-  dbConnection.query(query, (err, result) => {
-    if (err) {
-      res.status(500).send('Database query error');
-      return;
-    }
-
-    res.json({ info: result });  // Skickar tillbaka: { info: [...] }
-  });
-});
-
-app.get('/test', (req, res) => {
-  res.send('API is working!');
 });
 
 // Starta servern
