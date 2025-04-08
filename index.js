@@ -11,9 +11,6 @@ const port = 3000;
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
 
-// Serve static files (CSS, JS) from the public directory
-app.use(express.static('public'));  // Publickatalogen där HTML, CSS och JS ligger
-
 // Skapa databasanslutning
 const dbConnection = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -36,6 +33,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html')); // Serve index.html
 });
 
+app.get('/test', (req, res) => {
+  res.json({ message: 'API is working!' });
+});
+
 app.get('/api/COURSE', (req, res) => {
   const query = `
   SELECT u.forename, u.lastname, u.age, u.description
@@ -49,6 +50,9 @@ app.get('/api/COURSE', (req, res) => {
     res.json(result);  // Send the result as a JSON response
   });
 });
+
+// Serve static files (CSS, JS) from the public directory
+app.use(express.static('public'));  // Publickatalogen där HTML, CSS och JS ligger
 
 // Starta servern
 app.listen(port, () => {
