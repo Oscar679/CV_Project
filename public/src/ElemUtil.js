@@ -2,7 +2,7 @@ function ElemUtil(tag, obj) {
     var elem = document.createElement(tag);
 
     console.log(obj);
-
+    console.log('test if changes commit');
     if (typeof obj.className === "object") {
         for (var i = 0; i < obj.className.length; i++) {
             elem.classList.add(obj.className[i]);
