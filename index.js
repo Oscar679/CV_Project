@@ -26,10 +26,7 @@ dbConnection.connect((err) => {
 
 // API Endpoint för att hämta kurser
 app.get('/api/COURSE', (req, res) => {
-  const query = `
-    SELECT u.forename AS title, u.description AS desc
-    FROM \`USER\` u
-  `;
+  const query = `SELECT * FROM COURSE`;
   dbConnection.query(query, (err, result) => {
     if (err) {
       console.error('Database query error:', err);
