@@ -5,7 +5,7 @@ function Content() {
 }
 
 Content.prototype.init = async function () {
-    await this.construct("/json/data.json");
+    await this.construct("http://13.60.19.28:3000/api/COURSE");
 }
 
 Content.prototype.construct = async function (jsonUrl) {
@@ -37,7 +37,7 @@ Content.prototype.construct = async function (jsonUrl) {
         this.liA = ElemUtil("a", {
             className: "liA",
             appendTo: this.li,
-            content: this.data.info[i].title,
+            content: this.data.forename, //this.data.info[i].title,
             href: "#" + this.data.info[i].title.replace(/\s+/g, "").toLowerCase() + "Title"
         })
         console.log(this.liA);
