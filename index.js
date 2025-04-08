@@ -11,6 +11,9 @@ const port = 3000;
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
 
+// Serve static files (CSS, JS) from the public directory
+app.use(express.static('public'));  // Publickatalogen där HTML, CSS och JS ligger
+
 // Skapa databasanslutning
 const dbConnection = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -33,28 +36,26 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html')); // Serve index.html
 });
 
-app.get('/test', (req, res) => {
-  res.json({ message: 'API is working!' });
-});
-
 app.get('/api/COURSE', (req, res) => {
   const query = `
-  SELECT u.forename, u.lastname, u.age, u.description
-  FROM USER u
+    SELECT u.forename AS title, u.description AS desc
+    FROM USER u
   `;
   dbConnection.query(query, (err, result) => {
     if (err) {
       res.status(500).send('Database query error');
       return;
     }
-    res.json(result);  // Send the result as a JSON response
+
+    res.json({ info: result });  // Skickar tillbaka: { info: [...] }
   });
 });
 
-// Serve static files (CSS, JS) from the public directory
-app.use(express.static('public'));  // Publickatalogen där HTML, CSS och JS ligger
+app.get('/test', (req, res) => {
+  res.send('API is working!');
+});
 
 // Starta servern
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
   console.log(`Servern kör på http://localhost:${port}`);
 });
