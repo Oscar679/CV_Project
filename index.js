@@ -7,32 +7,6 @@ require('dotenv').config();
 const app = express();
 const port = 3000;
 
-app.get('/api/COURSE', (req, res) => {
-  const query = `
-    SELECT u.forename AS title, u.description AS desc
-    FROM USER u
-  `;
-  dbConnection.query(query, (err, result) => {
-    if (err) {
-      res.status(500).send('Database query error');
-      return;
-    }
-
-    res.json({ info: result });  // Skickar tillbaka: { info: [...] }
-  });
-});
-
-app.get('/test', (req, res) => {
-  res.send('API is working!');
-});
-
-// view engine
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'))
-
-// Serve static files (CSS, JS) from the public directory
-app.use(express.static('public'));  // Publickatalogen där HTML, CSS och JS ligger
-
 // Skapa databasanslutning
 const dbConnection = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -49,6 +23,33 @@ dbConnection.connect((err) => {
   }
   console.log('Ansluten till databasen!');
 });
+
+// API Endpoint för att hämta kurser
+app.get('/api/COURSE', (req, res) => {
+  const query = `
+    SELECT u.forename AS title, u.description AS desc
+    FROM \`USER\` u
+  `;
+  dbConnection.query(query, (err, result) => {
+    if (err) {
+      console.error('Database query error:', err);
+      res.status(500).send('Database query error');
+      return;
+    }
+    res.json({ info: result });  // Skickar tillbaka: { info: [...] }
+  });
+});
+
+app.get('/test', (req, res) => {
+  res.send('API is working!');
+});
+
+// view engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'))
+
+// Serve static files (CSS, JS) from the public directory
+app.use(express.static('public'));  // Publickatalogen där HTML, CSS och JS ligger
 
 // Serve index.html from the public folder
 app.get('/', (req, res) => {
