@@ -33,7 +33,7 @@ app.get('/api/COURSE', (req, res) => {
   const params = [];
 
   if (skill_name) {
-    query += ` AND skill_name = Java`;
+    query += ` AND skill_name = 'Java'`;
     params.push(skill_name);
   }
 
