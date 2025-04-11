@@ -26,7 +26,17 @@ dbConnection.connect((err) => {
 
 // API Endpoint för att hämta kurser
 app.get('/api/COURSE', (req, res) => {
-  const query = `SELECT * FROM SKILL`;
+  const { skill_name } = req.query;
+
+  let query = `SELECT * FROM SKILL WHERE 1=1`;
+
+  const params = [];
+
+  if (skill_name) {
+    query += ` AND skill_name = Java`;
+    params.push(skill_name);
+  }
+
   dbConnection.query(query, (err, result) => {
     if (err) {
       console.error('Database query error:', err);
