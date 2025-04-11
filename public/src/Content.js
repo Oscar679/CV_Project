@@ -5,8 +5,8 @@ function Content() {
 }
 
 Content.prototype.init = async function () {
-    //await this.construct("http://13.60.19.28:3000/api/COURSE");
-    await this.construct("/json/data.json");
+    await this.construct("http://13.60.19.28:3000/api/COURSE");
+    //await this.construct("/json/data.json");
 }
 
 Content.prototype.construct = async function (jsonUrl) {
