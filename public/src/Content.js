@@ -5,7 +5,8 @@ function Content() {
 }
 
 Content.prototype.init = async function () {
-    await this.construct("http://13.60.19.28:3000/api/COURSE");
+    //await this.construct("http://13.60.19.28:3000/api/COURSE");
+    await this.construct("/json/data.json");
 }
 
 Content.prototype.construct = async function (jsonUrl) {
@@ -63,18 +64,18 @@ Content.prototype.construct = async function (jsonUrl) {
         id: "projectsTitle"
     })
 
-    this.checkBoxContainer = ElemUtil("div", {
+    this.checkBoxContainer = ElemUtil("form", {
         className: "checkBoxContainer",
         appendTo: document.getElementById("sectionContainer")
     })
 
     this.options = new Array(
-        { text: " HTML", value: "html" },
-        { text: " CSS", value: "css" },
-        { text: " JavaScript", value: "js" },
-        { text: "PHP", value: "php" },
-        { text: "MySQL", value: "mysql" },
-        { text: "AWS", value: "aws" }
+        { text: " HTML", value: "html", name: "skill" },
+        { text: " CSS", value: "css", name: "skill" },
+        { text: " JavaScript", value: "js", name: "skill" },
+        { text: "PHP", value: "php", name: "skill" },
+        { text: "MySQL", value: "mysql", name: "skill" },
+        { text: "AWS", value: "aws", name: "skill" }
     );
 
     this.options.forEach(option => {
@@ -87,6 +88,8 @@ Content.prototype.construct = async function (jsonUrl) {
             type: "checkbox",
             className: "optionCheckBox",
             appendTo: this.label,
+            value: option.value,
+            name: option.name,
             event: {
                 change: (e) => console.log(`${option.text} checked:`, e.target.checked)
             }
@@ -98,13 +101,20 @@ Content.prototype.construct = async function (jsonUrl) {
         });
     });
 
+    this.submit = ElemUtil("button", {
+        type: "submit",
+        id: "submitBtn",
+        appendTo: this.checkBoxContainer,
+        content: "Find courses"
+    });
+
     this.projectsDesc = ElemUtil("article", {
         className: "educationDesc",
         appendTo: document.getElementById("sectionContainer")
     })
 
     this.projectsBoxContainer = ElemUtil("article", {
-        className: "projectsBoxContainer",
+        id: "projectsBoxContainer",
         appendTo: this.projectsDesc
     })
 

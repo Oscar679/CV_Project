@@ -169,7 +169,7 @@ body {
 }
 
 /* Styling for projects boxes */
-.projectsBoxContainer {
+#projectsBoxContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;

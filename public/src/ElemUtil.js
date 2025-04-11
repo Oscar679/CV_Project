@@ -37,5 +37,13 @@ function ElemUtil(tag, obj) {
         elem.href = obj.href;
     }
 
+    if (obj.value) {
+        elem.value = obj.value;
+    }
+
+    if (obj.name) {
+        elem.name = obj.name;
+    }
+
     return elem;
 }
