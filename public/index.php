@@ -9,7 +9,7 @@
     <script src="src/Content.js" language="javascript" type="text/javascript"></script>
     <script src="src/ElemUtil.js" language="javascript" type="text/javascript"></script>
     <script src="src/SectionChecker.js" language="javascript" type="text/javascript"></script>
-    <script src="src/Query.js" language="javascript" type="text/javascript"></script>
+    <!-- <script src="src/Query.js" language="javascript" type="text/javascript"></script> -->
     <title>This is me - Oscar Ekberg</title>
 </head>
 
