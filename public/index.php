@@ -1,3 +1,11 @@
+<?php
+include_once 'dbConnection.php';
+
+$sql = "SELECT forename, lastname, description
+        FROM USER WHERE user_id = 1";
+$result = mysqli_query($connection, $sql);
+?>
+
 <html lang="en">
 
 <head>
@@ -12,13 +20,16 @@
     <!-- <script src="src/Query.js" language="javascript" type="text/javascript"></script> -->
     <title>This is me - Oscar Ekberg</title>
 </head>
-<?php
-phpinfo();
-?>
 
 <body>
     <header id="header"></header>
     <section id="sectionContainer">
+        <?php
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<p>";
+            echo $row['forename'] . " " . $row['lastname'] . " " . $row['description'];
+        }
+        ?>
     </section> <!-- put articles dynamically inside here -->
     <footer id="footer"></footer>
 </body>
