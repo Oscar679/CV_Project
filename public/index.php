@@ -15,6 +15,14 @@ $result = mysqli_query($connection, $sql);
 if (!$result) {
     die("Query failed: " . mysqli_error($connection)); // Check if the query was successful
 }
+
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<p>" . htmlspecialchars($row['forename']) . " " . htmlspecialchars($row['lastname']) . " - " . htmlspecialchars($row['description']) . "</p>";
+    }
+} else {
+    echo "No data found or query failed.";
+}
 ?>
 
 <html lang="en">
