@@ -9,7 +9,7 @@ if (!$connection) {
 }
 
 // Query to get user data
-$sql = "SELECT forename, lastname, description FROM USER WHERE user_id = 1";
+$sql = "SELECT * FROM USER WHERE user_id = 1";
 $result = mysqli_query($connection, $sql);
 
 if (!$result) {
