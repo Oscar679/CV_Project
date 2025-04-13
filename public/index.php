@@ -1,9 +1,11 @@
 <?php
-include_once 'dbConnection.php';
+include_once './dbConnection.php';
 
-$sql = "SELECT forename, lastname, description
-        FROM USER WHERE user_id = 1";
-$result = mysqli_query($connection, $sql);
+$connection = mysqli_connect("your_host", "your_username", "your_password", "your_database");
+
+if (!$connection) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 ?>
 
 <html lang="en">
