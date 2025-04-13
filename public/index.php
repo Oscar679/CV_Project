@@ -26,8 +26,8 @@ $result = mysqli_query($connection, $sql);
     <section id="sectionContainer">
         <?php
         while ($row = mysqli_fetch_assoc($result)) {
-            echo "<p>";
-            echo $row['forename'] . " " . $row['lastname'] . " " . $row['description'];
+            // Use htmlspecialchars to avoid XSS attacks
+            echo "<p>" . htmlspecialchars($row['forename']) . " " . htmlspecialchars($row['lastname']) . " - " . htmlspecialchars($row['description']) . "</p>";
         }
         ?>
     </section> <!-- put articles dynamically inside here -->
