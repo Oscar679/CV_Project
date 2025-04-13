@@ -12,6 +12,9 @@
     <!-- <script src="src/Query.js" language="javascript" type="text/javascript"></script> -->
     <title>This is me - Oscar Ekberg</title>
 </head>
+<?php
+phpinfo();
+?>
 
 <body>
     <header id="header"></header>
