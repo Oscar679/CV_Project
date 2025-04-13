@@ -2,7 +2,7 @@
 $db_server = "cv-database.czkggswac3j8.eu-north-1.rds.amazonaws.com";
 $db_user = "oscar";
 $db_pass = "Elitehej123!";
-$db_database = "cv-schema";
+$db_database = "cv-database";
 
 // Attempt to connect to the database
 $connection = mysqli_connect($db_server, $db_user, $db_pass, $db_database);
@@ -11,5 +11,5 @@ $connection = mysqli_connect($db_server, $db_user, $db_pass, $db_database);
 if (!$connection) {
     die("Connection failed: " . mysqli_connect_error());
 } else {
-    echo "Connected successully!";
+    echo "Connected successfully!";
 }
