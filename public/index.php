@@ -1,10 +1,19 @@
 <?php
 include_once './dbConnection.php';
 
+// Make sure to replace these values with your actual database credentials
 $connection = mysqli_connect("your_host", "your_username", "your_password", "your_database");
 
 if (!$connection) {
     die("Connection failed: " . mysqli_connect_error());
+}
+
+// Query to get user data
+$sql = "SELECT forename, lastname, description FROM USER WHERE user_id = 1";
+$result = mysqli_query($connection, $sql);
+
+if (!$result) {
+    die("Query failed: " . mysqli_error($connection)); // Check if the query was successful
 }
 ?>
 
